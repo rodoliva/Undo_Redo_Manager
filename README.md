@@ -112,7 +112,7 @@ redo list []
 ```
 
 
-Here comes the disaster ... all the same and when changing a variable, it is the same:
+Here comes the disaster ... all the same and when changing a variable, it's the same:
 
 
 ```shell
@@ -233,6 +233,90 @@ redo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x022
 
 The solution was simple, import a python library to make a deep copy:
 
-```shell
+```python
 import copy
+```
+
+With this method, it's possible to copy and create a new instance of the list, and also a new instance of each object within the list.
+
+```python
+def clone_li(self, li):
+    """Clone the object in a list and make difference
+    instance of each object"""
+    auxli = []
+    if not li == []:
+        copyli = copy.deepcopy(li)
+        for obj in copyli:
+            auxli.append(copy.deepcopy(obj))
+        return auxli
+```
+
+And the new code:
+
+```python
+import copy
+
+class UndoRedoManager(object):
+
+    def __init__(self, li):
+        self.undo_list = []
+        self.undo_list.append(self.clone_li(li))
+        self.redo_list = []
+
+    def add_undo(self, action):
+        #Add the action to the undo list.
+        self.undo_list.append(action)
+
+    def add_redo(self, action):
+        #Add the action to the redo list
+        self.redo_list.append(action)
+
+    def delete_undo(self):
+        # Remove the last action from the undo list and return it
+        if not len(self.undo_list) <= 1:
+            last_undo = self.undo_list.pop()
+            return last_undo
+
+    def delete_redo(self):
+        #Remove the last action from the redo list and return it
+        if not len(self.redo_list) == 0:
+            last_redo = self.redo_list.pop()
+            return last_redo
+
+    def do_new_action(self, action):
+        """Use this function for each action.
+        This clear redo list with every new action and
+        add new element in the undo list"""
+        self.redo_list = []
+        self.add_undo(self.clone_li(action))
+
+    def undo(self):
+        #Undo the last actions
+        if not len(self.undo_list) <= 1:
+            action = self.delete_undo()
+            self.add_redo(action)
+            return self.clone_li(self.undo_list[len(self.undo_list) - 1])
+            #Return a cloned new list
+        else:
+            return self.clone_li(self.undo_list[0])
+
+    def redo(self):
+        #Redo the last actions
+        if not len(self.redo_list) == 0:
+            action = self.delete_redo()
+            self.add_undo(action)
+            # Return a cloned new list
+            return self.clone_li(action)
+        else:
+            return self.clone_li(self.undo_list[len(self.undo_list) - 1])
+
+    def clone_li(self, li):
+        """Clone the object in a list and make difference
+        instance of each object"""
+        auxli = []
+        if not li == []:
+            copyli = copy.deepcopy(li)
+            for obj in copyli:
+                auxli.append(copy.deepcopy(obj))
+            return auxli
 ```
