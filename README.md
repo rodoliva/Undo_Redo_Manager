@@ -237,7 +237,7 @@ The solution was simple, import a python library to make a deep copy:
 import copy
 ```
 
-With this method, it's possible to copy and create a new instance of the list, and also a new instance of each object within the list.
+An with this method, it's possible to copy and create a new instance of the list, and also a new instance of each object within the list.
 
 ```python
 def clone_li(self, li):
