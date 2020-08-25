@@ -64,3 +64,47 @@ class UndoRedoManager():
         else:
             return self.undo_list[len(self.undo_list)-1]
 ```
+
+The results looked good:
+
+```shell
+first add
+list  [5, 6, 7, 8, 1]
+undo list [[5, 6, 7, 8], [5, 6, 7, 8, 1]]
+redo list []
+
+second add
+list  [5, 6, 7, 8, 1, 2]
+undo list [[5, 6, 7, 8], [5, 6, 7, 8, 1], [5, 6, 7, 8, 1, 2]]
+redo list []
+
+first undo
+list  [5, 6, 7, 8, 1]
+undo list [[5, 6, 7, 8], [5, 6, 7, 8, 1]]
+redo list [[5, 6, 7, 8, 1, 2]]
+
+second undo
+list  [5, 6, 7, 8]
+undo list [[5, 6, 7, 8]]
+redo list [[5, 6, 7, 8, 1, 2], [5, 6, 7, 8, 1]]
+
+third undo
+list  [5, 6, 7, 8]
+undo list [[5, 6, 7, 8]]
+redo list [[5, 6, 7, 8, 1, 2], [5, 6, 7, 8, 1]]
+
+first redo
+list  [5, 6, 7, 8, 1]
+undo list [[5, 6, 7, 8], [5, 6, 7, 8, 1]]
+redo list [[5, 6, 7, 8, 1, 2]]
+
+second redo
+list  [5, 6, 7, 8, 1, 2]
+undo list [[5, 6, 7, 8], [5, 6, 7, 8, 1], [5, 6, 7, 8, 1, 2]]
+redo list []
+
+third redo
+list  [5, 6, 7, 8, 1, 2]
+undo list [[5, 6, 7, 8], [5, 6, 7, 8, 1], [5, 6, 7, 8, 1, 2]]
+redo list []
+```
