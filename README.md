@@ -110,3 +110,120 @@ list  [5, 6, 7, 8, 1, 2]
 undo list [[5, 6, 7, 8], [5, 6, 7, 8, 1], [5, 6, 7, 8, 1, 2]]
 redo list []
 ```
+
+
+
+```shell
+------------Object list Test------------
+list  [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>]
+['t1', 't2', 't3', 't4']
+----------------------------------------
+
+------------first add------------
+list  [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>]
+['t1', 't2', 't3', 't4', 't5']
+undo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>]]
+[['t1', 't2', 't3', 't4', 't5'], ['t1', 't2', 't3', 't4', 't5']]
+redo list []
+[]
+------------------------------------
+
+------------second add------------
+list  [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]
+['t1', 't2', 't3', 't4', 't5', 't6']
+undo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 't2', 't3', 't4', 't5', 't6'], ['t1', 't2', 't3', 't4', 't5', 't6'], ['t1', 't2', 't3', 't4', 't5', 't6']]
+redo list []
+[]
+------------------------------------
+
+------------first undo------------
+list  [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]
+['t1', 't2', 't3', 't4', 't5', 't6']
+undo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 't2', 't3', 't4', 't5', 't6'], ['t1', 't2', 't3', 't4', 't5', 't6']]
+redo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 't2', 't3', 't4', 't5', 't6']]
+------------------------------------
+
+------------second undo------------
+list  [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]
+['t1', 't2', 't3', 't4', 't5', 't6']
+undo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 't2', 't3', 't4', 't5', 't6']]
+redo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 't2', 't3', 't4', 't5', 't6'], ['t1', 't2', 't3', 't4', 't5', 't6']]
+------------------------------------
+
+------------third undo------------
+list  [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]
+['t1', 't2', 't3', 't4', 't5', 't6']
+undo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 't2', 't3', 't4', 't5', 't6']]
+redo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 't2', 't3', 't4', 't5', 't6'], ['t1', 't2', 't3', 't4', 't5', 't6']]
+------------------------------------
+
+------------first redo------------
+list  [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]
+['t1', 't2', 't3', 't4', 't5', 't6']
+undo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 't2', 't3', 't4', 't5', 't6'], ['t1', 't2', 't3', 't4', 't5', 't6']]
+redo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 't2', 't3', 't4', 't5', 't6']]
+------------------------------------
+
+------------second redo------------
+list  [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]
+['t1', 't2', 't3', 't4', 't5', 't6']
+undo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 't2', 't3', 't4', 't5', 't6'], ['t1', 't2', 't3', 't4', 't5', 't6'], ['t1', 't2', 't3', 't4', 't5', 't6']]
+redo list []
+[]
+------------------------------------
+
+------------third redo------------
+list  [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]
+['t1', 't2', 't3', 't4', 't5', 't6']
+undo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 't2', 't3', 't4', 't5', 't6'], ['t1', 't2', 't3', 't4', 't5', 't6'], ['t1', 't2', 't3', 't4', 't5', 't6']]
+redo list []
+[]
+------------------------------------
+
+------------Changing name 1------------
+list  [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]
+['t1', 'Name 1', 't3', 't4', 't5', 't6']
+undo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 'Name 1', 't3', 't4', 't5', 't6'], ['t1', 'Name 1', 't3', 't4', 't5', 't6'], ['t1', 'Name 1', 't3', 't4', 't5', 't6'], ['t1', 'Name 1', 't3', 't4', 't5', 't6']]
+redo list []
+[]
+------------------------------------
+------------------------------------
+Changing name 2
+list  [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]
+['t1', 'Name 2', 't3', 't4', 't5', 't6']
+undo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 'Name 2', 't3', 't4', 't5', 't6'], ['t1', 'Name 2', 't3', 't4', 't5', 't6'], ['t1', 'Name 2', 't3', 't4', 't5', 't6'], ['t1', 'Name 2', 't3', 't4', 't5', 't6'], ['t1', 'Name 2', 't3', 't4', 't5', 't6']]
+redo list []
+[]
+------------------------------------
+
+------------first undo------------
+list  [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]
+['t1', 'Name 2', 't3', 't4', 't5', 't6']
+undo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 'Name 2', 't3', 't4', 't5', 't6'], ['t1', 'Name 2', 't3', 't4', 't5', 't6'], ['t1', 'Name 2', 't3', 't4', 't5', 't6'], ['t1', 'Name 2', 't3', 't4', 't5', 't6']]
+redo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 'Name 2', 't3', 't4', 't5', 't6']]
+------------------------------------
+
+------------second undo------------
+list  [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]
+['t1', 'Name 2', 't3', 't4', 't5', 't6']
+undo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 'Name 2', 't3', 't4', 't5', 't6'], ['t1', 'Name 2', 't3', 't4', 't5', 't6'], ['t1', 'Name 2', 't3', 't4', 't5', 't6']]
+redo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
+[['t1', 'Name 2', 't3', 't4', 't5', 't6'], ['t1', 'Name 2', 't3', 't4', 't5', 't6']]
+------------------------------------
+```
