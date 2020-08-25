@@ -112,7 +112,7 @@ redo list []
 ```
 
 
-Here comes the disaster ... all the same and when changing a variable, it is the same
+Here comes the disaster ... all the same and when changing a variable, it is the same:
 
 
 ```shell
@@ -228,4 +228,11 @@ undo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x022
 redo list [[<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>], [<__main__.Test object at 0x0225C3D0>, <__main__.Test object at 0x0225C298>, <__main__.Test object at 0x0225C358>, <__main__.Test object at 0x0225C388>, <__main__.Test object at 0x0225C3E8>, <__main__.Test object at 0x0225C418>]]
 [['t1', 'Name 2', 't3', 't4', 't5', 't6'], ['t1', 'Name 2', 't3', 't4', 't5', 't6']]
 ------------------------------------
+```
+
+
+The solution was simple, import a python library to make a deep copy:
+
+```shell
+import copy
 ```
