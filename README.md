@@ -68,6 +68,8 @@ class UndoRedoManager():
 The results looked good:
 
 ```shell
+list  [5, 6, 7, 8]
+
 first add
 list  [5, 6, 7, 8, 1]
 undo list [[5, 6, 7, 8], [5, 6, 7, 8, 1]]
