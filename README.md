@@ -2,14 +2,14 @@
  
 This is an undo and redo solution that arose from a problem in the development of one of my personal projects, a pricing model interface.
 
+
 # The Problem
 
-
-During the development of the first interface (product interface), I look for ways to make a function to undo and redo the actions that were carried out in the interface.
+During the development of the first interface (product interface), I looked for ways to make a function to undo and redo the actions that were carried out in the interface.
 
 ![Screen record Gif](https://github.com/rodoliva/Product_Interface/blob/master/Others/screenprodinf.gif)
 
-The problem was working with objects and their instances. After studying some examples, I managed to get to the first Undo and Redo Manager
+The problem, I was working with objects and their instances. After studying some examples, I managed to get to the first Undo and Redo Manager:
 
 ```python
 class UndoRedoManager():
