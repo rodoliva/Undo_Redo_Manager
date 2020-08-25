@@ -54,7 +54,7 @@ class UndoRedoManager(object):
             return self.clone_li(self.undo_list[len(self.undo_list) - 1])
 
     def clone_li(self, li):
-        """Clone the object in a list and make difference instance of each object"""
+        """Clone the object in a list and make differents instances of each object"""
         auxli = []
         if not li == []:
             copyli = copy.deepcopy(li)
